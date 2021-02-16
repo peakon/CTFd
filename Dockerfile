@@ -36,6 +36,8 @@ RUN adduser \
 RUN chmod +x /opt/CTFd/docker-entrypoint.sh \
     && chown -R 1001:1001 /opt/CTFd /var/log/CTFd /var/uploads
 
+ENV PORT=80
+
 USER 1001
-EXPOSE 8000
+EXPOSE $PORT
 ENTRYPOINT ["/opt/CTFd/docker-entrypoint.sh"]
